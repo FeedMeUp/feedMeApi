@@ -6,9 +6,9 @@ exports.up = function(knex, Promise) {
     table.string('logo')
     table.string('item')
     table.integer('quantity')
-    table.timestamps('pickUpBy')
+    table.string('pickUpBy')
     table.string('address')
-    table.boolean('claimed')
+    table.boolean('claimed').defaultTo(false)
   })
 };
 

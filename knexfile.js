@@ -7,7 +7,7 @@ module.exports = {
     connection: {
       filename: './dev.sqlite3'
     }
-  },
+  }
 
   production: process.env.DATABASE_URL
 

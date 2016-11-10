@@ -7,29 +7,28 @@ router.get('/', function(req, res) {
     .then(function(unclaimedFood){
       res.json({unclaimedFood}).status(200)
     })
-    .catch(err){
-      res.status(500)
-    }
+    // .catch(err){
+    //   console.log(err);
+    //   res.status(500)
+    // }
 });
 
 router.get('/:id', function(req, res){
-  foodDB.getFoodById(id){
+  foodDB.getFoodById(id)
     .then(function(foodInfo){
       res.json({foodInfo}).status(200)
     })
-    .catch(err){
+    .catch(err)
       res.status(404)
-    }
-  }
+
 })
 
 router.post('/', function(req, res){
-  foodDB.addNewFood(foodInfo){
+  foodDB.addNewFood(req.body)
     .then(function(foodInfo){
       res.json({foodInfo}).status(201)
     })
     .catch()
-  }
 
 })
 module.exports = router;

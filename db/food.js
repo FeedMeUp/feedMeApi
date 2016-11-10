@@ -16,5 +16,6 @@ function addNewFood(foodInfo){
 }
 module.exports = {
   getFoodNotClaimed,
-  getFoodById
+  getFoodById,
+  addNewFood
 }

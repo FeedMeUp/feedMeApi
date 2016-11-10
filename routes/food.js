@@ -14,7 +14,7 @@ router.get('/', function(req, res) {
 });
 
 router.get('/:id', function(req, res){
-  foodDB.getFoodById(id)
+  foodDB.getFoodById(req.params.id)
     .then(function(foodInfo){
       res.json({foodInfo}).status(200)
     })
@@ -26,6 +26,7 @@ router.get('/:id', function(req, res){
 router.post('/', function(req, res){
   foodDB.addNewFood(req.body)
     .then(function(foodInfo){
+      console.log(foodInfo);
       res.json({foodInfo}).status(201)
     })
     .catch(function(err){

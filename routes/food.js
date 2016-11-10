@@ -7,10 +7,10 @@ router.get('/', function(req, res) {
     .then(function(unclaimedFood){
       res.json({unclaimedFood}).status(200)
     })
-    // .catch(err){
-    //   console.log(err);
-    //   res.status(500)
-    // }
+    .catch(function(err){
+      console.log(err);
+      res.status(500)
+    })
 });
 
 router.get('/:id', function(req, res){
@@ -18,9 +18,9 @@ router.get('/:id', function(req, res){
     .then(function(foodInfo){
       res.json({foodInfo}).status(200)
     })
-    .catch(err)
+    .catch(function(err){
       res.status(404)
-
+    })
 })
 
 router.post('/', function(req, res){
@@ -28,7 +28,8 @@ router.post('/', function(req, res){
     .then(function(foodInfo){
       res.json({foodInfo}).status(201)
     })
-    .catch()
-
+    .catch(function(err){
+      res.status(404)
+    })
 })
 module.exports = router;
